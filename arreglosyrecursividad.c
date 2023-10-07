@@ -1,12 +1,14 @@
 #include <stdio.h>
 
-int existeValor(int *arreglo, int valor, int longitud) {
+
+//Busqueda lineal
+int busquedaLineal(int *arreglo, int valor, int longitud) {
 	
-	int existe = 0;
+	int existe = 0; //Variable para reconocer si existe el valor en el arreglo
 
 	for (int i = 0; i < longitud; i++) {
 		if (arreglo[i] == valor){
-			printf("El valor existe en la posicion: %d",arreglo[i]);
+			printf("El valor existe en la posicion: %d",i);
 			existe=1;
 			break;
 		}
@@ -28,5 +30,6 @@ int main (){
     	
 	scanf("%d", &valor);
 
-	existeValor(arreglo, valor, longitud);
+	busquedaLineal(arreglo, valor, longitud);
+	//busquedaBinaria(arreglo, valor, longitud);
 }
