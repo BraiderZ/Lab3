@@ -1,5 +1,29 @@
 #include <stdio.h>
 
+int busquedaBinariaRecursiva(int *arreglo, int valor, int izquierda, int derecha ){
+	
+	if (izquierda > derecha){
+		
+		return -1; //Valor fuera de los posibles de la posicion
+
+	}
+
+	int numeroMitad =  izquierda + (derecha - izquierda) / 2;
+	
+	if (valor ==  arreglo[numeroMitad]){
+	       
+		return numeroMitad;
+	} else if (valor > arreglo[numeroMitad]){
+		
+		return busquedaBinariaRecursiva(arreglo, valor, numeroMitad + 1, derecha);
+        }else {
+		
+		return busquedaBinariaRecursiva(arreglo, valor, izquierda, numeroMitad - 1);
+        }
+	
+	
+}
+
 int busquedaBinaria(int *arreglo, int valor, int longitud) {
 
         int existe=0; //Se encarga de ver si el valor existe
@@ -61,4 +85,12 @@ int main (){
 
 	busquedaLineal(arreglo, valor, longitud);
 	busquedaBinaria(arreglo, valor, longitud);
+	int posicion = busquedaBinariaRecursiva(arreglo, valor, 0, longitud - 1); //De una vez se agrega la variable izquierda y derecha por conveniencia
+		
+
+	if (posicion == -1){
+		printf("BinariaRecursiva-EL valor no existe\n");
+	}else {
+		printf("BinariaRecursiva-El valor existe en la posicion: %d\n", posicion);
+	}	
 }
