@@ -22,7 +22,7 @@ int Max(int *arreglo, int longitud){
 
                 if (arreglo[i] > max){
 
-                        min = arreglo[i];
+                        max = arreglo[i];
                 }
         }
         return max;
