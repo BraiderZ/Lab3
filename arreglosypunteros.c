@@ -28,8 +28,21 @@ int Max(int *arreglo, int longitud){
         return max;
 }
 
+void MinMaxPunteros(int * arreglo, int * min, int * max, int longitud) {
+        *min = *arreglo;
+        *max = *arreglo;
+        for (int i = 0; i < longitud; i++) {
+                if(*(arreglo+i) > *max) {
+                        *max = *(arreglo+i);
+                }
+		if(*(arreglo+i) < *min) {
+                        *min = *(arreglo+i);
+		}
+	}
 
-
+	printf("Punteros-El valor minimo del arreglo es: %d\n", *min);
+	printf("Punteros-El valor maximo del arreglo es: %d\n", *max);
+}
 
 
 int main (){
@@ -44,6 +57,9 @@ int main (){
 	int max = Max(arreglo, longitud);
 
         printf("El valor maximo del arreglo es: %d\n", max);
+	
+	int minimo, maximo; //Para comodidad del puntero, se definen dos variables que se envian como parametros
+	MinMaxPunteros(arreglo, &minimo, &maximo, longitud);
 
 	return 0;	
 }
