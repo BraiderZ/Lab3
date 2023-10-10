@@ -14,6 +14,19 @@ int Min(int *arreglo, int longitud){
 	return min;
 }
 
+int Max(int *arreglo, int longitud){
+
+        int max = arreglo[0];
+
+        for (int i=1 ; i < longitud ; i++) {
+
+                if (arreglo[i] > max){
+
+                        min = arreglo[i];
+                }
+        }
+        return max;
+}
 
 
 
@@ -28,6 +41,10 @@ int main (){
        	
 	printf("El valor minimo del arreglo es: %d\n", min);
 	
+	int max = Max(arreglo, longitud);
+
+        printf("El valor maximo del arreglo es: %d\n", max);
+
 	return 0;	
 }
 
