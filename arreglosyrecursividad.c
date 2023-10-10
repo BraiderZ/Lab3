@@ -24,7 +24,7 @@ int busquedaBinariaRecursiva(int *arreglo, int valor, int izquierda, int derecha
 	
 }
 
-int busquedaBinaria(int *arreglo, int valor, int longitud) {
+void busquedaBinaria(int *arreglo, int valor, int longitud) {
 
         int existe=0; //Se encarga de ver si el valor existe
 
@@ -55,7 +55,7 @@ int busquedaBinaria(int *arreglo, int valor, int longitud) {
 }
 
 
-int busquedaLineal(int *arreglo, int valor, int longitud) {
+void busquedaLineal(int *arreglo, int valor, int longitud) {
 	
 	int existe = 0; //Variable para reconocer si existe el valor en el arreglo
 
@@ -92,5 +92,7 @@ int main (){
 		printf("BinariaRecursiva-EL valor no existe\n");
 	}else {
 		printf("BinariaRecursiva-El valor existe en la posicion: %d\n", posicion);
-	}	
+	}
+
+	return 0;	
 }
